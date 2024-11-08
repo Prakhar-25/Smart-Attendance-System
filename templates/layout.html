@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Attendance System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body style = "background: url(/static/img/5166950.jpg); background-size: cover; height: 500px;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black; filter: opacity(87%);">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="/" style="color: white;">MovieMentor</a> -->
+            <ul class="nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" style="float: left;">
+                  <a class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page" href="/" style="color: white;">Home</a>
+                </li>
+                <li class="nav-item" style="float: left;">
+                  <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="about" style="color: white;">About</a>
+                </li>
+                <li class="nav-item" style="float: left;">
+                    <a class="nav-link {% if request.path == '/dashboard' %}active{% endif %}" aria-current="page" href="dashboard" style="color: white;">Faculty Dashboard</a>
+                </li>
+            </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">About</a>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </nav>
+
+{% block body %}
+{% endblock %}
+
+<!-- Footer -->
+ {% comment %} <div class="container-fluid navbar-dark text-light footer mt-1 pt-0" style = "background-color: black; filter: opacity(87%); position: fixed; bottom: 0; width: 100%;">
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p> &copy; Prakhar Gupta, All Right Reserved. </p>
+                </div> {% endcomment %}
+                {% comment %} <div class="col-md-6 text-center text-md-end">
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                </div> {% endcomment %}
+            {% comment %} </div>
+        </div>
+    </div>
+</div>  {% endcomment %}
+
+</body>
+</html>
+

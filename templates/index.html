@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    {% comment %} <script>
+        function validateForm() {
+            const enrollment = document.getElementById("enrollment").value.trim() ;
+            const password = document.getElementById("password").value.trim() ;
+            let valid = true ;
+            // Clear previous error messages
+            document.getElementById("enrollment-error").textContent = "";
+            document.getElementById("password-error").textContent = "";
+
+            if(!enrollmet){
+                document.getElementById("enrollment-error").textContent = "Enrollment no. is required." ;
+                valid = false ;
+            }
+            if(!password){
+                document.getElementById("password-error").textContent = "Password is required." ;
+                valid = false ;
+            }
+            return valid ;
+        }
+    </script> {% endcomment %}
+
+    <div class="container">
+        <p class="h1 py-5" style="color: rgb(254, 254, 254); text-align: center; margin-top: 50px;" >SMART ATTENDANCE SYSTEM</p>
+    </div>
+    <div class="container position-absolute top-70 start-50 translate-middle" style="background-color: white; filter: opacity(87%); margin-top: 120px; margin-bottom: 30px ; border-radius: 25px; width: 40%;">
+        <p class="h3 py-1" style="color: rgb(48, 14, 116); text-align: center;" >Student Login</p>
+        <div class="container my-3 p-3 mb-0">
+            <form  method="post">
+                {% csrf_token %}
+                <!-- <div class="mb-2 row" >
+                    <label for="enrollment" class="form-label" style="font-weight: bold;">Enter Enrollment No. :</label>
+                    <input type="text" class="form-control" name = "enrollment" id="enrollment" aria-describedby="enrollment" style="width: 50%">
+                </div> -->
+                <div class="mb-2 row g-3 align-items-center">
+                    <div class="col-5">
+                      <label for="enrollment" class="col-form-label" style="font-weight: bold;">Enter Enrollment No.:</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="text" id="enrollment" name = "enrollment" class="form-control border border-black" aria-describedby="enrollment" autocomplete = "off">
+                      <span id="enrollment-error" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="mb-2 row g-3 align-items-center">
+                    <div class="col-5">
+                      <label for="password" class="col-form-label" style="font-weight: bold;">Enter Password:</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="password" id="password" name = "password" class="form-control border border-black" aria-describedby="passwordHelpInline">
+                      <span id="password-error" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class = "row align-center">
+                    <div class="mb-2 col-auto" style="margin-top: 20px; margin-bottom: 50px ; filter: opacity(100%);">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                    <div class="mb-2 col-auto" style="margin-top: 20px; margin-bottom: 50px ; filter: opacity(100%);">
+                        <a class="btn btn-primary" href = "/register">Register</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% if messages %}
+        <div class = "alert alert-danger mt-4">
+            {% for message in messages %}
+            <p> {{message}} </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+{% endblock body %}
