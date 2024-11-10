@@ -13,4 +13,4 @@ To install the face recognition library, simply use:
 ![home screen](/screenshots/home_screen.png)
 ![login_page](/screenshots/login.png)
 ![capture](/screenshots/capture.png)
-![faculty_dashboard](/screenshots/dashboard.png)
+![faculty_dashboard](/screenshots/dashboard.jpg)
